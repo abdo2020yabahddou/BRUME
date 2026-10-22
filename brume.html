@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="header">
-    <a href="#" class="brand" aria-label="BRUME, accueil">
+    <div class="brand" aria-label="BRUME, accueil">
         <svg width="23" height="23" viewBox="0 0 26 26"
              fill="none" aria-hidden="true">
             <path d="M18.4 9.75V8.67H5.42V17.33A5.42 5.42 0 0 0 10.83 22.75H13A5.42 5.42 0 0 0 18.42 17.33V9.75ZM18.4 9.75H19.5A3.25 3.25 0 0 1 19.5 16.25H18.4M8.67 2.17V4.33M13 2.17V4.33M17.33 2.17V4.33"
@@ -17,7 +17,7 @@
                   stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
         <span>BRUME</span>
-    </a>
+    </div>
 
     <nav class="navBar" aria-label="Navigation principale">
         <a href="#atelier" class="active">L’atelier café</a>
@@ -173,7 +173,7 @@
                     </label>
 
                     <label class="option">
-                        <input type="checkbox" name="extra"
+                        <input type="radio" name="extra"
                                value="Vanille" data-price="3">
                         <span class="option-name">Vanille</span>
                         <span class="option-price">+ 3,00 DH</span>
@@ -194,7 +194,7 @@
     </div>
 
     <nav>
-        <a>
+        <a href="brumeSummary.html">
             <button class="add-button" id="addToCart" type="button">
                 Ajouter au panier
                 <span aria-hidden="true">→</span>
