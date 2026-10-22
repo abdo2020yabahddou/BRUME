@@ -14,5 +14,3 @@ function updateCoffee() {
 }
 
 form.addEventListener("change", updateCoffee);
-
-updateCoffee();
