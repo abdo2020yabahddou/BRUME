@@ -75,7 +75,7 @@
         </div>
 
         <form id="coffeeForm">
-            <fieldset class="option-group">
+            <fieldset class="option_group">
                 <legend>
                     <span>01&nbsp; La base</span>
                     <small>Choix unique</small>
@@ -98,7 +98,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="option-group">
+            <fieldset class="option_group">
                 <legend>
                     <span>02&nbsp; La taille</span>
                     <small>Choix unique</small>
@@ -128,7 +128,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="option-group">
+            <fieldset class="option_group">
                 <legend>
                     <span>03&nbsp; Le lait</span>
                     <small>Choix unique</small>
@@ -158,7 +158,7 @@
                 </div>
             </fieldset>
 
-            <fieldset class="option-group">
+            <fieldset class="option_group">
                 <legend>
                     <span>04&nbsp; La touche en plus</span>
                     <small>Plusieurs choix</small>
@@ -187,22 +187,26 @@
         </form>
     </section>
 </main>
-
 <section class="price-bar" aria-label="Récapitulatif du prix">
     <div class="price-details">
         <p>Votre création · Café sur mesure</p>
         <strong id="totalPrice" aria-live="polite">29,00 DH</strong>
     </div>
 
-    <button class="add-button" id="addToCart" type="button">
-        Ajouter au panier
-        <span aria-hidden="true">→</span>
-    </button>
+    <nav>
+        <a>
+            <button class="add-button" id="addToCart" type="button">
+                Ajouter au panier
+                <span aria-hidden="true">→</span>
+            </button>
+        </a>
+    </nav>
 </section>
 
 <footer class="footer">
     <p>BRUME — Le goût de votre rythme.</p>
     <p>Une création unique, la vôtre.</p>
 </footer>
+<script src="click.js"></script>
 </body>
 </html>
