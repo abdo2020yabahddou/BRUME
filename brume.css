@@ -28,11 +28,7 @@ input {
     font: inherit;
 }
 
-button,
-a,
-label {
-    -webkit-tap-highlight-color: transparent;
-}
+/*  end of it*/
 
 a {
     color: inherit;
@@ -58,13 +54,11 @@ button {
     display: inline-flex;
     align-items: center;
     gap: 9px;
-    justify-self: start;
     color: var(--dark);
 }
 
 .brand svg {
     color: var(--green);
-    flex-shrink: 0;
 }
 
 .brand span {
@@ -79,7 +73,6 @@ button {
     justify-content: center;
     align-items: center;
     gap: 28px;
-    white-space: nowrap;
 }
 
 .navBar a {
@@ -95,11 +88,11 @@ button {
 .cart-icon {
     display: inline-flex;
     align-items: center;
-    justify-self: end;
     gap: 9px;
     border: 0;
     background: transparent;
     color: var(--green);
+    margin-left: 300px;
 }
 
 .cart-icon span {
@@ -123,7 +116,6 @@ button {
     padding: 20px;
     border-radius: 17px;
     background: var(--card-bg);
-    overflow: hidden;
 }
 
 .cardTop {
@@ -140,7 +132,6 @@ button {
     background: var(--white);
     color: var(--green);
     font-size: 9px;
-    white-space: nowrap;
 }
 
 .step-counter {
@@ -173,7 +164,6 @@ button {
 
 .coffeeDescription h1 {
     font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: clamp(25px, 2.5vw, 34px);
     font-weight: 500;
     line-height: 1.12;
 }
@@ -247,12 +237,12 @@ button {
     gap: 18px;
 }
 
-.option-group {
+.option_group {
     min-width: 0;
     border: 0;
 }
 
-.option-group legend {
+.option_group legend {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -264,7 +254,7 @@ button {
     font-weight: 600;
 }
 
-.option-group legend small {
+.option_group legend small {
     color: var(--muted);
     font-size: 9px;
     font-weight: 400;
@@ -311,16 +301,11 @@ button {
 }
 
 .option input {
-    position: absolute;
     width: 1px;
     height: 1px;
-    opacity: 0;
-    pointer-events: none;
 }
 
 .option input:focus-visible + .option-name {
-    outline: 2px solid #647da5;
-    outline-offset: 3px;
     border-radius: 2px;
 }
 
@@ -332,7 +317,6 @@ button {
 }
 
 .option.selected .option-name {
-    content: "✓";
     display: inline-block;
     margin-right: 6px;
     color: var(--dark);
@@ -391,13 +375,6 @@ button {
 
 .add-button:hover {
     background: #293a25;
-}
-
-.add-button:focus-visible,
-.cart-icon:focus-visible,
-a:focus-visible {
-    outline: 2px solid #647da5;
-    outline-offset: 4px;
 }
 
 .footer {

@@ -1,0 +1,228 @@
+.recap-main {
+    padding: 32px 5% 50px;
+}
+
+.step-indicator {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    margin-bottom: 26px;
+    color: var(--muted);
+    font-size: 10px;
+}
+
+.current-step {
+    color: var(--green);
+    font-weight: 600;
+}
+
+.recap-main > .eyebrow {
+    margin-bottom: 13px;
+    color: var(--green);
+    font-size: 10px;
+}
+
+.page-title {
+    margin-bottom: 20px;
+    font-family: "Cormorant Garamond", Georgia, serif;
+    font-weight: 500;
+    line-height: 1.02;
+    letter-spacing: -1px;
+}
+
+.recap-layout {
+    display: grid;
+    grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+    align-items: start;
+    gap: 3.5%;
+}
+
+.preview-column {
+    min-width: 0;
+}
+
+.preview-column .coffeeCard {
+    min-height: 635px;
+}
+
+.signature-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 20px;
+}
+
+.signature-row h2 {
+    margin-bottom: 7px;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.signature-row p {
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.edit-link {
+    color: var(--green);
+    text-decoration: underline;
+}
+
+.summary-card {
+    min-width: 0;
+    padding: 30px;
+    border: 1px solid var(--border);
+    border-radius: 20px;
+    background: var(--white);
+}
+
+.success-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    padding: 9px 12px;
+    margin-bottom: 22px;
+    border-radius: 30px;
+    background: var(--green-light);
+    color: var(--green);
+    font-size: 10px;
+}
+
+.summary-card > h2 {
+    margin-bottom: 23px;
+    font-size: 22px;
+    font-weight: 500;
+}
+
+.summary-subtitle {
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 11px;
+}
+
+.price-lines {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    padding: 20px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.price-line {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    font-size: 13px;
+}
+
+.price-line span {
+    color: var(--muted);
+}
+
+.price-line strong {
+    flex-shrink: 0;
+    font-weight: 500;
+}
+
+.total-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+    padding: 24px 0;
+    font-size: 16px;
+}
+
+.total-row strong:last-child {
+    font-size: 23px;
+}
+
+.payment-note {
+    margin-bottom: 20px;
+    color: var(--muted);
+    font-size: 10px;
+    line-height: 1.6;
+}
+
+.new-coffee-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    width: 100%;
+    min-height: 53px;
+    padding: 12px 18px;
+    border-radius: 11px;
+    background: var(--green);
+    color: var(--white);
+    font-size: 13px;
+}
+
+.new-coffee-button:hover {
+    background: #293a25;
+}
+
+.editable-note {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 19px;
+    padding: 15px;
+    border-radius: 12px;
+    background: var(--green-light);
+    color: var(--muted);
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+.editable-note > span:first-child {
+    color: var(--green);
+    font-size: 17px;
+}
+
+@media (max-width: 1000px) {
+    .recap-layout {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 28px;
+    }
+
+    .preview-column .coffeeCard {
+        min-height: 560px;
+    }
+
+    .summary-card {
+        width: 100%;
+        max-width: 700px;
+        margin: 0 auto;
+        padding: 25px;
+    }
+}
+
+@media (max-width: 560px) {
+    .recap-main {
+        padding: 24px 5% 35px;
+    }
+
+    .page-title {
+        font-size: 35px;
+    }
+
+    .preview-column .coffeeCard {
+        min-height: 450px;
+    }
+
+    .summary-card {
+        padding: 20px;
+    }
+
+    .price-line {
+        font-size: 12px;
+    }
+
+    .total-row strong:last-child {
+        font-size: 20px;
+    }
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> BRUME_summary</title>
+    //
+    <link rel="stylesheet" href="brume.css">
+    <link rel="stylesheet" href="brumeSummary.css">
+</head>
+<body>
+<header class="header">
+    <div class="brand" aria-label="BRUME, accueil">
+        <svg width="23" height="23" viewBox="0 0 26 26"
+             fill="none" aria-hidden="true">
+            <path d="M18.4 9.75V8.67H5.42V17.33A5.42 5.42 0 0 0 10.83 22.75H13A5.42 5.42 0 0 0 18.42 17.33V9.75ZM18.4 9.75H19.5A3.25 3.25 0 0 1 19.5 16.25H18.4M8.67 2.17V4.33M13 2.17V4.33M17.33 2.17V4.33"
+                  stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>BRUME</span>
+    </div>
+
+    <nav class="navBar" aria-label="Navigation principale">
+        <a href="brume.html" class="active">L’atelier café</a>
+        <a href="#">Notre savoir-faire</a>
+        <a href="#">Besoin d’aide ?</a>
+    </nav>
+
+    <button class="cart-icon" type="button" aria-label="Voir le panier">
+        <svg width="21" height="21" viewBox="0 0 22 22"
+             fill="none" aria-hidden="true">
+            <path d="M8.25 6.42H5.5L3.67 19.25H18.33L16.5 6.42H13.75M8.25 6.42V5.5A2.75 2.75 0 0 1 11 2.75 2.75 2.75 0 0 1 13.75 5.5V6.42"
+                  stroke="currentColor" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="cartCount"> 1 </span>
+    </button>
+</header>
+
+<main class="recap-main">
+    <div class="step-indicator">
+        <a>01&nbsp; Personnaliser</a>
+        <span aria-hidden="true">—</span>
+        <span class="current-step">02&nbsp; Récapitulatif</span>
+    </div>
+
+    <p class="eyebrow">VOTRE CRÉATION EST PRÊTE</p>
+
+    <h1 class="page-title">
+        Votre moment café,<br>
+        exactement comme vous l’aimez.
+    </h1>
+
+    <div class="recap-layout">
+
+        <section class="preview-column" aria-label="Aperçu du café">
+            <div class="coffeeCard">
+                <div class="cardTop">
+                    <span class="pill">LE CAFÉ, À VOTRE FAÇON</span>
+                    <span class="step-counter">01 / 04</span>
+                </div>
+
+                <div class="coffeeImage">
+                    <img src="assets/pic1.png"
+                         alt="Illustration de votre café personnalisé">
+                </div>
+
+                <div class="coffeeDescription">
+                    <h2>Un petit rituel. Beaucoup de vous.</h2>
+                    <p id="coffeeSummary">
+                        ESPRESSO · M · AVOINE · CARAMEL
+                    </p>
+                </div>
+            </div>
+
+            <div class="signature-row">
+                <div>
+                    <h2>Votre café signature</h2>
+                    <p id="signatureSummary">
+                        Espresso · M · Avoine · Caramel
+                    </p>
+                </div>
+
+                <a href="brume.html" class="edit-link">Modifier</a>
+            </div>
+        </section>
+        <section class="summary-card" aria-labelledby="summaryTitle">
+                <span class="success-pill">
+                    <span aria-hidden="true">✓</span>
+                    Sélection ajoutée
+                </span>
+
+            <h2 id="summaryTitle">Votre récapitulatif</h2>
+
+            <p class="summary-subtitle">
+                Une création personnalisée · Quantité : 1
+            </p>
+
+            <div id="priceLines" class="price-lines">
+
+
+            </div>
+
+            <div class="total-row">
+                <strong>Total</strong>
+                <strong id="recapTotal">0,00 DH</strong>
+            </div>
+
+            <p class="payment-note">
+                Prix de cette sélection · aucun paiement effectué.
+            </p>
+
+            <a href="brume.html" class="new-coffee-button">
+                Créer un autre café
+                <span aria-hidden="true">→</span>
+            </a>
+
+            <div class="editable-note">
+                <span aria-hidden="true">✓</span>
+                <span>Votre sélection reste modifiable à tout moment.</span>
+            </div>
+        </section>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>BRUME — Le goût de votre rythme.</p>
+    <p>Une création unique, la vôtre.</p>
+</footer>
+<script src="recap.js"></script>
+</body>
+</html>
