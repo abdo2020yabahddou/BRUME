@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finaliser ma commande | BRUME</title>
+    <link rel="stylesheet" href="brume.css">
+    <link rel="stylesheet" href="checkout.css">
+</head>
+<body>
+<header class="header">
+    <div class="brand" aria-label="BRUME, accueil">
+        <svg width="23" height="23" viewBox="0 0 26 26"
+             fill="none" aria-hidden="true">
+            <path d="M18.4 9.75V8.67H5.42V17.33A5.42 5.42 0 0 0 10.83 22.75H13A5.42 5.42 0 0 0 18.42 17.33V9.75ZM18.4 9.75H19.5A3.25 3.25 0 0 1 19.5 16.25H18.4M8.67 2.17V4.33M13 2.17V4.33M17.33 2.17V4.33"
+                  stroke="currentColor" stroke-width="1.6"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>BRUME</span>
+    </div>
+
+    <nav class="navBar" aria-label="Navigation principale">
+        <a href="brume.html" class="active">L’atelier café</a>
+        <a href="#">Notre savoir-faire</a>
+        <a href="#">Besoin d’aide ?</a>
+    </nav>
+
+    <button class="cart-icon" type="button" aria-label="Voir le panier">
+        <svg width="21" height="21" viewBox="0 0 22 22"
+             fill="none" aria-hidden="true">
+            <path d="M8.25 6.42H5.5L3.67 19.25H18.33L16.5 6.42H13.75M8.25 6.42V5.5A2.75 2.75 0 0 1 11 2.75 2.75 2.75 0 0 1 13.75 5.5V6.42"
+                  stroke="currentColor" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="cartCount">3</span>
+    </button>
+</header>
+<main class="checkout-main">
+    <section class="checkout-intro">
+        <p class="eyebrow">VOTRE COMMANDE</p>
+        <h1>Nous sommes tout près</h1>
+
+        <p class="intro-description">
+            Retrouvez vos cafés préférés, ajustez votre commande
+            et préparez-vous à savourer votre création.
+        </p>
+    </section>
+    <div class="checkout-layout">
+        <section class="cart-section" aria-labelledby="cartTitle">
+            <div class="quick-add-panel" id="quickAddPanel">
+                <label for="productSearch">
+                    Rechercher un café
+                </label>
+
+                <div class="search-row">
+                    <div class="search-input-wrap">
+                        <span aria-hidden="true">⌕</span>
+
+                        <input type="search" id="productSearch" placeholder="Espresso, Mocha, Latte..."
+                               autocomplete="off">
+                    </div>
+                </div>
+                <div class="search-results" id="searchResults" aria-live="polite">
+                </div>
+
+            </div>
+            <div class="section-heading">
+                <div>
+                    <h2 id="cartTitle">Votre panier</h2>
+                </div>
+            </div>
+            <div class="cart-list" id="cartItems">
+                <article class="cart-item">
+                    <div class="product-image product-espresso" aria-hidden="true">
+                        <span>☕</span>
+                    </div>
+                    <div class="product-info">
+                        <h3>Espresso</h3>
+                        <p class="product-details">
+                            M · 250 ml · Avoine · Caramel
+                        </p>
+                        <p class="product-unit-price">29,00 DH / unité</p>
+                    </div>
+
+                    <div class="quantity-control"
+                         aria-label="Quantité d'Espresso">
+                        <button type="button" aria-label="Diminuer la quantité">
+                            −
+                        </button>
+                        <span>1</span>
+                        <button type="button" aria-label="Augmenter la quantité">
+                            +
+                        </button>
+                    </div>
+                    <div class="product-subtotal">
+                        <strong>29,00 DH</strong>
+                    </div>
+                    <button class="remove-item" type="button" aria-label="Supprimer Espresso">
+                        ×
+                    </button>
+                </article>
+
+                <article class="cart-item">
+                    <div class="product-image product-latte" aria-hidden="true">
+                        <span>☕</span>
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Latte</h3>
+                        <p class="product-details">
+                            Grand · Lait entier · Vanille
+                        </p>
+                        <p class="product-unit-price">32,00 DH / unité</p>
+                    </div>
+
+                    <div class="quantity-control" aria-label="Quantité de Latte">
+                        <button type="button" aria-label="Diminuer la quantité">
+                            −
+                        </button>
+                        <span>1</span>
+                        <button type="button" aria-label="Augmenter la quantité">
+                            +
+                        </button>
+                    </div>
+
+                    <div class="product-subtotal">
+                        <strong>32,00 DH</strong>
+                    </div>
+                    <button class="remove-item" type="button" aria-label="Supprimer Latte">
+                        ×
+                    </button>
+                </article>
+                <article class="cart-item">
+                    <div class="product-image product-cappuccino" aria-hidden="true">
+                        <span>☕</span>
+                    </div>
+
+                    <div class="product-info">
+                        <h3>Cappuccino</h3>
+                        <p class="product-details">
+                            Moyen · Lait d'amande · Sans supplément
+                        </p>
+                        <p class="product-unit-price">26,00 DH / unité</p>
+                    </div>
+                    <div class="quantity-control"
+                         aria-label="Quantité de Cappuccino">
+                        <button type="button" aria-label="Diminuer la quantité">−
+                        </button>
+                        <span>1</span>
+                        <button type="button" aria-label="Augmenter la quantité">
+                            +
+                        </button>
+                    </div>
+                    <div class="product-subtotal">
+                        <strong>26,00 DH</strong>
+                    </div>
+
+                    <button class="remove-item" type="button" aria-label="Supprimer Cappuccino">
+                        ×
+                    </button>
+                </article>
+            </div>
+            <div class="order-summary">
+                <div class="price-row total-row">
+                    <strong>Total à payer</strong>
+                    <strong id="cartTotal">87,00 DH</strong>
+                </div>
+            </div>
+        </section>
+        <section class="checkout-form-section" aria-labelledby="formTitle">
+            <div class="form-heading">
+                <h2 id="formTitle">Finaliser la commande</h2>
+                <p>Renseignez vos informations pour préparer votre commande.</p>
+            </div>
+            <form id="checkoutForm" novalidate>
+                <fieldset class="form-fieldset">
+                    <legend>Informations de livraison</legend>
+                    <div class="form-grid">
+                        <div class="form-group">
+                            <label for="firstName">Prénom *</label>
+                            <input type="text" id="firstName" name="firstName" placeholder="Ex. : ahmed"
+                                   autocomplete="given-name" required>
+                            <small class="field-error" id="firstNameError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Nom *</label>
+                            <input type="text" id="lastName" name="lastName" placeholder="Ex. : yasin"
+                                   autocomplete="family-name" required>
+                            <small class="field-error" id="lastNameError"></small>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="address">Adresse de livraison *</label>
+                            <input type="text" id="address" name="address" placeholder="Rue, quartier, ville"
+                                   autocomplete="street-address" required>
+                            <small class="field-error" id="addressError"></small>
+                        </div>
+                        <div class="form-group form-group-full">
+                            <label for="email">Adresse e-mail *</label>
+                            <input type="email" id="email" name="email" placeholder="ahmedyas@gmail.com"
+                                   autocomplete="email" required>
+                            <small class="field-error" id="emailError"></small>
+                        </div>
+                    </div>
+                </fieldset>
+                <fieldset class="form-fieldset payment-fieldset">
+                    <legend>Informations de paiement</legend>
+
+                    <p class="payment-description">
+                        Saisissez les informations de votre carte.
+                    </p>
+
+                    <div class="form-grid payment-grid">
+                        <div class="form-group form-group-full">
+                            <label for="cardName">Nom sur la carte *</label>
+                            <input type="text" id="cardName" name="cardName" placeholder="Nom indiqué sur la carte"
+                                   autocomplete="cc-name" required>
+                            <small class="field-error" id="cardNameError"></small>
+                        </div>
+
+                        <div class="form-group form-group-full">
+                            <label for="cardNumber">Numéro de carte *</label>
+                            <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456"
+                                   inputmode="numeric" autocomplete="cc-number" maxlength="19" required>
+                            <small class="field-error" id="cardNumberError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="expiryDate">Date d'expiration *</label>
+                            <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA"
+                                   inputmode="numeric" autocomplete="cc-exp" maxlength="5" required>
+                            <small class="field-error" id="expiryDateError"></small>
+                        </div>
+                        <div class="form-group">
+                            <label for="cvv">CVV *</label>
+                            <input type="password" id="cvv" name="cvv" placeholder="123"
+                                   inputmode="numeric" autocomplete="cc-csc" maxlength="4" required>
+                            <small class="field-error" id="cvvError"></small>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <div class="terms-group">
+                    <input type="checkbox" id="acceptTerms" name="acceptTerms" required>
+                    <label for="acceptTerms">
+                        J'accepte les conditions de vente et la politique de confidentialité.
+                    </label>
+                </div>
+                <small class="field-error" id="termsError"></small>
+                <button type="submit" class="checkout-button">
+                    <span>Finaliser ma commande</span>
+                    <span aria-hidden="true">→</span>
+                </button>
+
+                <p class="checkout-message" id="checkoutMessage" aria-live="polite"></p>
+            </form>
+        </section>
+    </div>
+</main>
+<footer class="footer">
+    <p>BRUME — Le goût de votre rythme.</p>
+    <p>Une création unique, la vôtre.</p>
+</footer>
+</body>
+</html>
