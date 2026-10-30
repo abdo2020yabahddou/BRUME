@@ -56,13 +56,19 @@
                     <div class="search-input-wrap">
                         <span aria-hidden="true">⌕</span>
 
-                        <input type="search" id="productSearch" placeholder="Espresso, Mocha, Latte..."
+                        <input type="search" id="productSearch" placeholder="chercher..."
                                autocomplete="off">
                     </div>
                 </div>
-                <div class="search-results" id="searchResults" aria-live="polite">
+            </div>
+            <div id="myModal" class="modal-search">
+                <div class="modal-content">
+                    <button class="close">&times;</button>
+                    <label>
+                        <input class="search-func" placeholder="search">
+                    </label>
+                    <div class="search-results" id="searchResults" aria-live="polite"></div>
                 </div>
-
             </div>
             <div class="section-heading">
                 <div>
@@ -70,16 +76,13 @@
                 </div>
             </div>
             <div class="cart-list" id="cartItems">
-                <article class="cart-item">
+                <article class="cart-item" data-id = "c1">
                     <div class="product-image product-espresso" aria-hidden="true">
                         <span>☕</span>
                     </div>
                     <div class="product-info">
-                        <h3>Espresso</h3>
-                        <p class="product-details">
-                            M · 250 ml · Avoine · Caramel
-                        </p>
-                        <p class="product-unit-price">29,00 DH / unité</p>
+                        <h3 > Espresso Intense</h3>
+                        <p class="product-category"> Base </p>
                     </div>
 
                     <div class="quantity-control"
@@ -87,7 +90,7 @@
                         <button type="button" aria-label="Diminuer la quantité">
                             −
                         </button>
-                        <span>1</span>
+                        <span class="quantity">1</span>
                         <button type="button" aria-label="Augmenter la quantité">
                             +
                         </button>
@@ -100,24 +103,21 @@
                     </button>
                 </article>
 
-                <article class="cart-item">
+                <article class="cart-item" data-id="c3">
                     <div class="product-image product-latte" aria-hidden="true">
                         <span>☕</span>
                     </div>
 
                     <div class="product-info">
-                        <h3>Latte</h3>
-                        <p class="product-details">
-                            Grand · Lait entier · Vanille
-                        </p>
-                        <p class="product-unit-price">32,00 DH / unité</p>
+                        <h3 data-id="c3"> Latte Caramel</h3>
+                        <p class="product-category"> Gourmand </p>
                     </div>
 
                     <div class="quantity-control" aria-label="Quantité de Latte">
                         <button type="button" aria-label="Diminuer la quantité">
                             −
                         </button>
-                        <span>1</span>
+                        <span class="quantity">1</span>
                         <button type="button" aria-label="Augmenter la quantité">
                             +
                         </button>
@@ -130,23 +130,20 @@
                         ×
                     </button>
                 </article>
-                <article class="cart-item">
+                <article class="cart-item" data-id="c2">
                     <div class="product-image product-cappuccino" aria-hidden="true">
                         <span>☕</span>
                     </div>
 
                     <div class="product-info">
-                        <h3>Cappuccino</h3>
-                        <p class="product-details">
-                            Moyen · Lait d'amande · Sans supplément
-                        </p>
-                        <p class="product-unit-price">26,00 DH / unité</p>
+                        <h3> Cappuccino Mousseux</h3>
+                        <p class="product-category"> Classique </p>
                     </div>
                     <div class="quantity-control"
                          aria-label="Quantité de Cappuccino">
                         <button type="button" aria-label="Diminuer la quantité">−
                         </button>
-                        <span>1</span>
+                        <span class="quantity">1</span>
                         <button type="button" aria-label="Augmenter la quantité">
                             +
                         </button>
@@ -233,7 +230,7 @@
                         <div class="form-group">
                             <label for="cvv">CVV *</label>
                             <input type="password" id="cvv" name="cvv" placeholder="123"
-                                   inputmode="numeric" autocomplete="cc-csc" maxlength="4" required>
+                                   inputmode="numeric" autocomplete="cc-csc" maxlength="3" required>
                             <small class="field-error" id="cvvError"></small>
                         </div>
                     </div>
@@ -260,5 +257,6 @@
     <p>BRUME — Le goût de votre rythme.</p>
     <p>Une création unique, la vôtre.</p>
 </footer>
+<script src="search.js" ></script>
 </body>
 </html>
