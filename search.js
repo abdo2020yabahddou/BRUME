@@ -19,18 +19,22 @@ const searchResults = document.getElementById("searchResults")
 const cartItems = document.getElementById("cartItems")
 let search_input = ""
 
+function display(){
+    modal.style.display = "none"
+}
+
 quickAddPanel.addEventListener("click", () => {
-    modal.style.display = "block";
+    modal.style.display = "block"
 })
 
 closeAct.addEventListener("click", () => {
-    modal.style.display = "none";
+    display()
     searchResults.innerHTML = ""
 })
 
 window.onclick = function (event) {
     if (event.target === modal) {
-        modal.style.display = "none";
+        display()
     }
     searchResults.innerHTML = ""
 }
@@ -48,31 +52,31 @@ const showList = () => {
                 item.name.toLowerCase().includes(search_input)
             )
         })
-        .forEach((e) => {
+        .forEach((item) => {
             const div = document.createElement("div")
             div.className = "search-result";
 
             const name = document.createElement("span")
-            name.textContent = `name:  ${e.name}`
+            name.textContent = `name:  ${item.name}`
 
             const category = document.createElement("span")
-            category.textContent = `category :${e.category}`
+            category.textContent = `category :${item.category}`
 
             const price = document.createElement("span")
-            price.textContent = `price : ${e.price}`
+            price.textContent = `price : ${item.price}`
 
             div.style.alignItems = `space-around`
 
             div.append(name, category, price)
             searchResults.appendChild(div);
             div.addEventListener("click", () => {
-                addCart(e)
+                addCart(item)
             })
         });
 }
 
 function addCart(product) {
-    const existingItem = cartItems.querySelector(`[data-id = "${product.id}"]`)
+    const existingItem = cartContainer.querySelector(`[data-id = "${product.id}"]`)
     if (existingItem) {
         const quantityElement = existingItem.querySelector(".quantity");
         if (quantityElement) {
@@ -84,6 +88,7 @@ function addCart(product) {
     const newItem = document.createElement("div");
     newItem.className = "cart-item";
     newItem.dataset.id = product.id;
+    newItem.dataset.price = product.price;
 
     newItem.innerHTML = `
         <div class="product-image" aria-hidden="true">
@@ -97,20 +102,24 @@ function addCart(product) {
 
         <div class="quantity-control"
              aria-label="Quantité de ${product.name}">
-            <button type="button" class="decrease"
-                    aria-label="Diminuer la quantité">−</button>
+            <button type="button" class="decrease" aria-label="Diminuer la quantité">
+            −
+            </button>
             <span class="quantity">1</span>
-            <button type="button" class="increase"
-                    aria-label="Augmenter la quantité">+</button>
+            <button type="button" class="increase" aria-label="Augmenter la quantité">
+            +
+            </button>
         </div>
 
         <div class="product-subtotal">
             <strong>${product.price.toFixed(2)} DH</strong>
         </div>
 
-        <button class="remove-item" type="button"
-                aria-label="Supprimer ${product.name}">×</button>
+        <button class="remove-item" type="button" aria-label="Supprimer ${product.name}">
+                ×
+                </button>
     `;
 
-    cartItems.appendChild(newItem);
+    cartContainer.appendChild(newItem);
+    updateTotal();
 }
