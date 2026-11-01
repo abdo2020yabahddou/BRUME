@@ -183,20 +183,20 @@
                         <div class="form-group">
                             <label for="lastName">Nom *</label>
                             <input type="text" id="lastName" name="lastName" placeholder="Ex: yasin"
-                                   autocomplete="family-name" required>
+                                   autocomplete="family-name" pattern="^[A-Za-z]+$" required>
                             <small class="field-error" id="lastNameError"></small>
                         </div>
 
                         <div class="form-group form-group-full">
                             <label for="address">Adresse de livraison *</label>
                             <input type="text" id="address" name="address" placeholder="Rue, quartier, ville"
-                                   autocomplete="street-address" required>
+                                   autocomplete="street-address" pattern="^[A-Za-z ,.]+$" required>
                             <small class="field-error" id="addressError"></small>
                         </div>
                         <div class="form-group form-group-full">
                             <label for="email">Adresse e-mail *</label>
                             <input type="email" id="email" name="email" placeholder="ahmedyas@gmail.com"
-                                   pattern="[a-zA-Z0-9._%+-]+@gmail.com$"
+                                   pattern="[a-zA-Z0-9._%+-]+@gmail\.com"
                                    autocomplete="email" required>
                             <small class="field-error" id="emailError"></small>
                         </div>
@@ -213,26 +213,28 @@
                         <div class="form-group form-group-full">
                             <label for="cardName">Nom sur la carte *</label>
                             <input type="text" id="cardName" name="cardName" placeholder="Nom indiqué sur la carte"
-                                   autocomplete="cc-name" required>
+                                   autocomplete="cc-name" pattern="^[A-Za-z ]+$" required>
                             <small class="field-error" id="cardNameError"></small>
                         </div>
 
                         <div class="form-group form-group-full">
                             <label for="cardNumber">Numéro de carte *</label>
                             <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456"
-                                   inputmode="numeric" autocomplete="cc-number" maxlength="19" pattern="^\d+$" required>
+                                   inputmode="numeric" autocomplete="cc-number" maxlength="19"
+                                   pattern="^(\d{4} ){3}\d{4}$" required>
                             <small class="field-error" id="cardNumberError"></small>
                         </div>
                         <div class="form-group">
                             <label for="expiryDate">Date d'expiration *</label>
                             <input type="text" id="expiryDate" name="expiryDate" placeholder="MM/AA"
-                                   inputmode="numeric" autocomplete="cc-exp" maxlength="5" required>
+                                   inputmode="numeric" autocomplete="cc-exp" maxlength="5"
+                                   pattern="^(0[1-9]|1[0-2])\/\d{2}$" required>
                             <small class="field-error" id="expiryDateError"></small>
                         </div>
                         <div class="form-group">
                             <label for="cvv">CVV *</label>
                             <input type="password" id="cvv" name="cvv" placeholder="123"
-                                   inputmode="numeric" autocomplete="cc-csc" maxlength="3" required>
+                                   inputmode="numeric" autocomplete="cc-csc" maxlength="3" pattern="^\d{3}$" required>
                             <small class="field-error" id="cvvError"></small>
                         </div>
                     </div>
