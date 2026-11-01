@@ -19,7 +19,7 @@ const searchResults = document.getElementById("searchResults")
 const cartItems = document.getElementById("cartItems")
 let search_input = ""
 
-function display(){
+function display() {
     modal.style.display = "none"
 }
 
@@ -30,6 +30,7 @@ quickAddPanel.addEventListener("click", () => {
 closeAct.addEventListener("click", () => {
     display()
     searchResults.innerHTML = ""
+    searchFunc.value = "";
 })
 
 window.onclick = function (event) {
@@ -37,6 +38,7 @@ window.onclick = function (event) {
         display()
     }
     searchResults.innerHTML = ""
+    searchFunc.value = "";
 }
 
 searchFunc.addEventListener("input", (event) => {
@@ -46,12 +48,17 @@ searchFunc.addEventListener("input", (event) => {
 
 const showList = () => {
     searchResults.innerHTML = ""
+    const cartIds = new Set();
+    cartContainer.querySelectorAll(".cart-item").forEach(item => {
+        cartIds.add(item.dataset.id);
+    });
     coffeeProducts
         .filter((item) => {
             return (
                 item.name.toLowerCase().includes(search_input)
             )
         })
+        .filter((item) => !cartIds.has(item.id))
         .forEach((item) => {
             const div = document.createElement("div")
             div.className = "search-result";
@@ -71,19 +78,22 @@ const showList = () => {
             searchResults.appendChild(div);
             div.addEventListener("click", () => {
                 addCart(item)
+                searchResults.innerHTML = "";
+                searchFunc.value = "";
             })
         });
 }
 
 function addCart(product) {
-    const existingItem = cartContainer.querySelector(`[data-id = "${product.id}"]`)
-    if (existingItem) {
-        const quantityElement = existingItem.querySelector(".quantity");
-        if (quantityElement) {
-            quantityElement.textContent = String(Number(quantityElement.textContent) + 1);
-        }
-        return;
-    }
+    const emptyElement = cartContainer.querySelector(".empty-cart");
+    if (emptyElement) emptyElement.remove();
+    // if (existingItem) {
+    //     const quantityElement = existingItem.querySelector(".quantity");
+    //     if (quantityElement) {
+    //         quantityElement.textContent = String(Number(quantityElement.textContent) + 1);
+    //     }
+    //     return;
+    // }
 
     const newItem = document.createElement("div");
     newItem.className = "cart-item";

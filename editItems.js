@@ -27,6 +27,7 @@ cartContainer.addEventListener("click", (event) => {
         item.remove();
         checkEmptyCart();
         updateTotal()
+        if (searchFunc.value) showList();
     }
 });
 
