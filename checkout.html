@@ -76,34 +76,34 @@
                 </div>
             </div>
             <div class="cart-list" id="cartItems">
-                <article class="cart-item" data-id = "c1">
+                <article class="cart-item" data-id="c1" data-price="2.50">
                     <div class="product-image product-espresso" aria-hidden="true">
                         <span>☕</span>
                     </div>
                     <div class="product-info">
-                        <h3 > Espresso Intense</h3>
+                        <h3> Espresso Intense</h3>
                         <p class="product-category"> Base </p>
                     </div>
 
                     <div class="quantity-control"
                          aria-label="Quantité d'Espresso">
-                        <button type="button" aria-label="Diminuer la quantité">
+                        <button type="button" aria-label="Diminuer la quantité" class="decrease">
                             −
                         </button>
                         <span class="quantity">1</span>
-                        <button type="button" aria-label="Augmenter la quantité">
+                        <button type="button" aria-label="Augmenter la quantité" class="increase">
                             +
                         </button>
                     </div>
                     <div class="product-subtotal">
-                        <strong>29,00 DH</strong>
+                        <strong>2.50 DH</strong>
                     </div>
                     <button class="remove-item" type="button" aria-label="Supprimer Espresso">
                         ×
                     </button>
                 </article>
 
-                <article class="cart-item" data-id="c3">
+                <article class="cart-item" data-id="c3" data-price="4.50">
                     <div class="product-image product-latte" aria-hidden="true">
                         <span>☕</span>
                     </div>
@@ -114,23 +114,23 @@
                     </div>
 
                     <div class="quantity-control" aria-label="Quantité de Latte">
-                        <button type="button" aria-label="Diminuer la quantité">
+                        <button type="button" aria-label="Diminuer la quantité" class="decrease">
                             −
                         </button>
                         <span class="quantity">1</span>
-                        <button type="button" aria-label="Augmenter la quantité">
+                        <button type="button" aria-label="Augmenter la quantité" class="increase">
                             +
                         </button>
                     </div>
 
                     <div class="product-subtotal">
-                        <strong>32,00 DH</strong>
+                        <strong>4.50 DH</strong>
                     </div>
                     <button class="remove-item" type="button" aria-label="Supprimer Latte">
                         ×
                     </button>
                 </article>
-                <article class="cart-item" data-id="c2">
+                <article class="cart-item" data-id="c2" data-price="4.00">
                     <div class="product-image product-cappuccino" aria-hidden="true">
                         <span>☕</span>
                     </div>
@@ -141,15 +141,16 @@
                     </div>
                     <div class="quantity-control"
                          aria-label="Quantité de Cappuccino">
-                        <button type="button" aria-label="Diminuer la quantité">−
+                        <button type="button" aria-label="Diminuer la quantité" class="decrease">
+                            −
                         </button>
                         <span class="quantity">1</span>
-                        <button type="button" aria-label="Augmenter la quantité">
+                        <button type="button" aria-label="Augmenter la quantité" class="increase">
                             +
                         </button>
                     </div>
                     <div class="product-subtotal">
-                        <strong>26,00 DH</strong>
+                        <strong>4.00 DH</strong>
                     </div>
 
                     <button class="remove-item" type="button" aria-label="Supprimer Cappuccino">
@@ -160,7 +161,7 @@
             <div class="order-summary">
                 <div class="price-row total-row">
                     <strong>Total à payer</strong>
-                    <strong id="cartTotal">87,00 DH</strong>
+                    <strong id="cartTotal">11.00 DH</strong>
                 </div>
             </div>
         </section>
@@ -175,13 +176,13 @@
                     <div class="form-grid">
                         <div class="form-group">
                             <label for="firstName">Prénom *</label>
-                            <input type="text" id="firstName" name="firstName" placeholder="Ex. : ahmed"
-                                   autocomplete="given-name" required>
+                            <input type="text" id="firstName" name="firstName" placeholder="Ex: ahmed"
+                                   autocomplete="given-name" pattern="^[A-Za-z]+$" required>
                             <small class="field-error" id="firstNameError"></small>
                         </div>
                         <div class="form-group">
                             <label for="lastName">Nom *</label>
-                            <input type="text" id="lastName" name="lastName" placeholder="Ex. : yasin"
+                            <input type="text" id="lastName" name="lastName" placeholder="Ex: yasin"
                                    autocomplete="family-name" required>
                             <small class="field-error" id="lastNameError"></small>
                         </div>
@@ -195,6 +196,7 @@
                         <div class="form-group form-group-full">
                             <label for="email">Adresse e-mail *</label>
                             <input type="email" id="email" name="email" placeholder="ahmedyas@gmail.com"
+                                   pattern="[a-zA-Z0-9._%+-]+@gmail.com$"
                                    autocomplete="email" required>
                             <small class="field-error" id="emailError"></small>
                         </div>
@@ -218,7 +220,7 @@
                         <div class="form-group form-group-full">
                             <label for="cardNumber">Numéro de carte *</label>
                             <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9012 3456"
-                                   inputmode="numeric" autocomplete="cc-number" maxlength="19" required>
+                                   inputmode="numeric" autocomplete="cc-number" maxlength="19" pattern="^\d+$" required>
                             <small class="field-error" id="cardNumberError"></small>
                         </div>
                         <div class="form-group">
@@ -257,6 +259,7 @@
     <p>BRUME — Le goût de votre rythme.</p>
     <p>Une création unique, la vôtre.</p>
 </footer>
-<script src="search.js" ></script>
+<script src="search.js"></script>
+<script src="editItems.js"></script>
 </body>
 </html>
