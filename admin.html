@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BRUME - Création de produit</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+          rel="stylesheet">
+    <link rel="stylesheet" href="brume.css">
+    <link rel="stylesheet" href="admin.css">
+</head>
+<body>
+<header class="header">
+    <div class="brand" aria-label="BRUME, accueil">
+        <svg width="23" height="23" viewBox="0 0 26 26"
+             fill="none" aria-hidden="true">
+            <path d="M18.4 9.75V8.67H5.42V17.33A5.42 5.42 0 0 0 10.83 22.75H13A5.42 5.42 0 0 0 18.42 17.33V9.75ZM18.4 9.75H19.5A3.25 3.25 0 0 1 19.5 16.25H18.4M8.67 2.17V4.33M13 2.17V4.33M17.33 2.17V4.33"
+                  stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span>BRUME</span>
+    </div>
+    <nav class="navBar" aria-label="Navigation principale">
+        <a href="brume.html">L’atelier café</a>
+        <a href="#">Notre savoir-faire</a>
+        <a href="#">Besoin d’aide ?</a>
+    </nav>
+    <button class="cart-icon" type="button" aria-label="Voir le panier">
+        <svg width="21" height="21" viewBox="0 0 22 22"
+             fill="none" aria-hidden="true">
+            <path d="M8.25 6.42H5.5L3.67 19.25H18.33L16.5 6.42H13.75M8.25 6.42V5.5A2.75 2.75 0 0 1 11 2.75 2.75 2.75 0 0 1 13.75 5.5V6.42"
+                  stroke="currentColor" stroke-width="1.4"
+                  stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <span id="cartCount">4</span>
+    </button>
+</header>
+<main class="container py-5">
+    <div class="mb-4">
+        <p class="text-muted mb-1">Back-office</p>
+        <h1 class="display-5 fw-semibold">Création de Produit</h1>
+        <p class="text-muted">
+            Ajoutez une nouvelle boisson à notre catalogue.
+        </p>
+    </div>
+
+    <div class="wizard">
+        <input type="radio" name="wizard" id="stepOne" checked>
+        <input type="radio" name="wizard" id="stepTwo">
+        <input type="radio" name="wizard" id="stepThree">
+        <div class="row text-center mb-4">
+            <div class="col-4">
+                <div class="step-number step-number-one active">1</div>
+                <p class="fw-semibold mt-2">Informations générales</p>
+            </div>
+
+            <div class="col-4">
+                <div class="step-number step-number-two">2</div>
+                <p class="text-muted mt-2">Caractéristiques & Options</p>
+            </div>
+
+            <div class="col-4">
+                <div class="step-number step-number-three">3</div>
+                <p class="text-muted mt-2">Récapitulatif</p>
+            </div>
+        </div>
+        <div class="card shadow-sm border-0 wizard-step step-one">
+            <div class="card-body p-4">
+
+                <h3 class="mb-1">Informations générales</h3>
+                <p class="text-muted mb-4">
+                    Renseignez les informations de base de votre produit.
+                </p>
+
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <label for="productName" class="form-label">
+                                Nom de la boisson
+                            </label>
+                            <input type="text" class="form-control" id="productName"
+                                   placeholder="Ex: Latte Caramel" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="category" class="form-label">
+                                Catégorie
+                            </label>
+                            <select class="form-select" id="category" required>
+                                <option value="">Choisir une catégorie</option>
+                                <option>Classique</option>
+                                <option>Gourmand</option>
+                                <option>Froid</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="price" class="form-label">
+                                Prix de base (DH)
+                            </label>
+                            <input type="number" class="form-control" id="price" min="0" step="0.01"
+                                   placeholder="Ex: 35.00" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="image" class="form-label">
+                                Image du produit (URL)
+                            </label>
+                            <input type="url" class="form-control" id="image"
+                                   placeholder="https://example.com/image.jpg" required>
+                        </div>
+                        <div class="col-12">
+                            <label for="description" class="form-label">
+                                Description
+                            </label>
+                            <textarea class="form-control" id="description" rows="3"
+                                      placeholder="Décrivez votre boisson..." required></textarea>
+                        </div>
+
+                        <div class="col-12">
+                            <div class="promotion-box p-3 rounded">
+                                <div class="form-check form-switch">
+                                    <input class="form-check-input" type="checkbox" id="promotion">
+                                    <label class="form-check-label fw-semibold" for="promotion">
+                                        Produit en promotion
+                                    </label>
+                                </div>
+                                <p class="text-muted small mb-0 mt-1">
+                                    Activez cette option pour proposer une réduction.
+                                </p>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="d-flex justify-content-between mt-4">
+                        <button type="reset" class="btn btn-outline-secondary">
+                            Annuler
+                        </button>
+                        <label for="stepTwo" class="btn btn-success">
+                            Suivant →
+                        </label>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="card shadow-sm border-0 wizard-step step-two">
+            <div class="card-body p-4">
+                <h3 class="mb-1">Caractéristiques & Options</h3>
+                <p class="text-muted mb-4">
+                    Personnalisez les caractéristiques de votre boisson.
+                </p>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <label for="origin" class="form-label fw-semibold">
+                            Origine du café
+                        </label>
+                        <select class="form-select" id="origin">
+                            <option value="">Choisir une origine</option>
+                            <option>Colombie</option>
+                            <option>Éthiopie</option>
+                            <option>Brésil</option>
+                            <option>Mélange maison</option>
+                        </select>
+                    </div>
+
+                    <div class="col-md-6">
+                        <label for="intensity" class="form-label fw-semibold">
+                            Intensité du café (1 à 10)
+                        </label>
+                        <input type="range" class="form-range" id="intensity" min="1" max="10" value="5">
+                        <div class="d-flex justify-content-between text-muted small">
+                            <span>Léger</span>
+                            <span>Intense</span>
+                        </div>
+                    </div>
+                    <div class="col-12">
+                        <p class="fw-semibold mb-2">Température</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="temperature" id="hot" value="Chaud">
+                            <label class="form-check-label" for="hot">
+                                Chaud
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="temperature" id="cold" value="Froid">
+                            <label class="form-check-label" for="cold">
+                                Froid
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="fw-semibold mb-2">Tailles disponibles</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="size" id="small" value="Small">
+                            <label class="form-check-label" for="small">
+                                Small
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="size" id="medium" value="Medium">
+                            <label class="form-check-label" for="medium">
+                                Medium
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="size" id="large" value="Large">
+                            <label class="form-check-label" for="large">
+                                Large
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="fw-semibold mb-2">Options de lait</p>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="milk" id="cow" value="Lait de vache">
+                            <label class="form-check-label" for="cow">
+                                Lait de vache
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="milk" id="oat" value="Lait d'avoine">
+                            <label class="form-check-label" for="oat">
+                                Lait d'avoine
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="milk" id="soy" value="Lait de soja">
+                            <label class="form-check-label" for="soy">
+                                Lait de soja
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="milk" id="almond" value="Lait d'amande">
+                            <label class="form-check-label" for="almond">
+                                Lait d'amande
+                            </label>
+                        </div>
+                    </div>
+                    <div class="col-12"><p class="fw-semibold mb-2">Suppléments</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="vanilla" value="Vanille">
+                            <label class="form-check-label" for="vanilla">
+                                Vanille
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="caramel" value="Caramel">
+                            <label class="form-check-label" for="caramel">
+                                Caramel
+                            </label>
+                        </div>
+
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" id="hazelnut" value="Noisette">
+                            <label class="form-check-label" for="hazelnut">
+                                Noisette
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <label for="stepOne" class="btn btn-outline-secondary">
+                        ← Précédent
+                    </label>
+                    <label for="stepThree" class="btn btn-success">
+                        Suivant →
+                    </label>
+                </div>
+            </div>
+        </div>
+
+        <div class="card shadow-sm border-0 wizard-step step-three">
+            <div class="card-body p-4">
+                <h3 class="mb-1">Récapitulatif</h3>
+                <p class="text-muted mb-4">
+                    Vérifiez les informations de votre nouvelle boisson avant confirmation.
+                </p>
+                <div class="row g-4">
+                    <div class="col-md-5">
+                        <div class="border rounded p-3 h-100">
+                            <p class="fw-semibold mb-3">Aperçu du produit</p>
+                            <div class="bg-light rounded d-flex align-items-center justify-content-center"
+                                 style="height: 200px;">
+                                <span class="text-muted">
+                                    Image du produit
+                                </span>
+                            </div>
+                            <h4 class="mt-3">Nom de la boisson</h4>
+                            <p class="text-muted mb-2">
+                                Description du produit
+                            </p>
+                            <p class="fw-semibold">Prix : -- DH</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-7">
+                        <div class="border rounded p-3 h-100">
+                            <h5 class="mb-3">Informations générales</h5>
+                            <p><strong>Catégorie :</strong> --</p>
+                            <p><strong>Prix de base :</strong> -- DH</p>
+                            <p><strong>Promotion :</strong> Non</p>
+                            <hr>
+                            <h5 class="mb-3">Caractéristiques</h5>
+
+                            <p><strong>Origine :</strong> --</p>
+                            <p><strong>Intensité :</strong> --</p>
+                            <p><strong>Température :</strong> --</p>
+                            <p><strong>Taille :</strong> --</p>
+                            <p><strong>Type de lait :</strong> --</p>
+                            <p><strong>Suppléments :</strong> --</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex justify-content-between mt-4">
+                    <label for="stepTwo" class="btn btn-outline-secondary">
+                        ← Précédent
+                    </label>
+
+                    <button type="button" class="btn btn-success">
+                        Confirmer la création
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<footer class="footer">
+    <p>BRUME — Le goût de votre rythme.</p>
+    <p>Une création unique, la vôtre.</p>
+</footer>
+</body>
+</html>
