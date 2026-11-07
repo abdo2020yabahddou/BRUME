@@ -567,6 +567,11 @@
     transform: scale(0.99);
 }
 
+.checkout-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
 .checkout-button:focus-visible,
 .quick-add-toggle:focus-visible,
 .quantity-control button:focus-visible,

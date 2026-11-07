@@ -5,17 +5,15 @@ cartContainer.addEventListener("click", (event) => {
     const item = event.target.closest(".cart-item");
     if (!item) return;
 
+    const quantityDisplayed = item.querySelector(".quantity");
+    let quantity = Number(quantityDisplayed.textContent);
     if (event.target.classList.contains("increase")) {
-        const quantityDisplayed = item.querySelector(".quantity");
-        let quantity = Number(quantityDisplayed.textContent);
         quantity++;
         quantityDisplayed.textContent = String(quantity);
         updateTotal()
     }
 
     if (event.target.classList.contains("decrease")) {
-        const quantityDisplayed = item.querySelector(".quantity");
-        let quantity = Number(quantityDisplayed.textContent);
         if (quantity > 1) {
             quantity--;
             quantityDisplayed.textContent = String(quantity);
