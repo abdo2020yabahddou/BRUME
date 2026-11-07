@@ -48,17 +48,17 @@ searchFunc.addEventListener("input", (event) => {
 
 const showList = () => {
     searchResults.innerHTML = ""
-    const cartIds = new Set();
-    cartContainer.querySelectorAll(".cart-item").forEach(item => {
-        cartIds.add(item.dataset.id);
-    });
+    // const cartIds = new Set();
+    // cartContainer.querySelectorAll(".cart-item").forEach(item => {
+    //     cartIds.add(item.dataset.id);
+    // });
     coffeeProducts
         .filter((item) => {
             return (
                 item.name.toLowerCase().includes(search_input)
             )
         })
-        .filter((item) => !cartIds.has(item.id))
+        // .filter((item) => !cartIds.has(item.id))
         .forEach((item) => {
             const div = document.createElement("div")
             div.className = "search-result";
@@ -87,13 +87,14 @@ const showList = () => {
 function addCart(product) {
     const emptyElement = cartContainer.querySelector(".empty-cart");
     if (emptyElement) emptyElement.remove();
-    // if (existingItem) {
-    //     const quantityElement = existingItem.querySelector(".quantity");
-    //     if (quantityElement) {
-    //         quantityElement.textContent = String(Number(quantityElement.textContent) + 1);
-    //     }
-    //     return;
-    // }
+    const existingItem = cartItems.querySelector(`[data-id = "${product.id}"]`)
+    if (existingItem) {
+        const quantityElement = existingItem.querySelector(".quantity");
+        if (quantityElement) {
+            quantityElement.textContent = String(Number(quantityElement.textContent) + 1);
+        }
+        return;
+    }
 
     const newItem = document.createElement("div");
     newItem.className = "cart-item";
