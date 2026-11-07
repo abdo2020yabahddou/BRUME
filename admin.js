@@ -27,7 +27,6 @@ function validateName() {
     // if (productName.value.trim() === "" || !isNaN(productName.value)) {
     //     throw new Error("Veuillez entrer un nom valide.");
     // }
-
     const namePattern = /^[\p{L}\s]+$/u;
     if (!namePattern.test(productName.value.trim())) {
         throw new Error("Le nom doit contenir uniquement des lettres.");
